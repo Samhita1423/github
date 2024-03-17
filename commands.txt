@@ -1,0 +1,744 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+samhi@Acer-NItro-5:~$ ls
+samhi@Acer-NItro-5:~$ mkdir project
+samhi@Acer-NItro-5:~$ cd project
+samhi@Acer-NItro-5:~/project$ ls
+samhi@Acer-NItro-5:~/project$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/samhi/project/.git/
+samhi@Acer-NItro-5:~/project$ ls
+samhi@Acer-NItro-5:~/project$ ls -a
+.  ..  .git
+samhi@Acer-NItro-5:~/project$ ls .git
+HEAD  branches  config  description  hooks  info  objects  refs
+samhi@Acer-NItro-5:~/project$ touch names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        names.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+samhi@Acer-NItro-5:~/project$ git add names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+samhi@Acer-NItro-5:~/project$ git commit -m "names.txt file added"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <samhi@Acer-NItro-5.>) not allowed
+samhi@Acer-NItro-5:~/project$ git commit -m "names.txt file added"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <samhi@Acer-NItro-5.>) not allowed
+samhi@Acer-NItro-5:~/project$ whoami
+samhi
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+samhi@Acer-NItro-5:~/project$ git commit -m "names.txt file is added"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <samhi@Acer-NItro-5.>) not allowed
+samhi@Acer-NItro-5:~/project$ git config --global user.email "samhita1
+423@gmail.com"
+samhi@Acer-NItro-5:~/project$ git config user.name "Samhita"
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   names.txt
+
+samhi@Acer-NItro-5:~/project$ git commit -m "names.txt file is added"
+[master (root-commit) 4b61b91] names.txt file is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+nothing to commit, working tree clean
+samhi@Acer-NItro-5:~/project$ vim names.txt
+samhi@Acer-NItro-5:~/project$ vim names.txt
+samhi@Acer-NItro-5:~/project$ cat names.txt
+dhyanaSamhita
+Kesavarapu
+gitIntro
+competence
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+samhi@Acer-NItro-5:~/project$ git add .
+samhi@Acer-NItro-5:~/project$ git statusamhi@Acer-NItro-5:~/project$ git push origin master
+Username for 'https://github.com': Samhita1423
+Password for 'https://Samhita1423@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 219 bytes | 219.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Samhita1423/gitIntrosamhi@Acer-NItro-5:~/project$ git push origin master
+Username for 'https://github.com': Samhita1423
+Password for 'https://Samhita1423@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 219 bytes | 219.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Samhita1423/gitIntros
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+samhi@Acer-NItro-5:~/project$ git restore --staged names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+samhi@Acer-NItro-5:~/project$ git add names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+samhi@Acer-NItro-5:~/project$ git commit -m "names.txt file is modifie
+d"
+[master c844404] names.txt file is modified
+ 1 file changed, 4 insertions(+)
+samhi@Acer-NItro-5:~/project$ git log
+commit c8444045399896927415bee702aa6069ea66e447 (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+samhi@Acer-NItro-5:~/project$ vim names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+samhi@Acer-NItro-5:~/project$ git add names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   names.txt
+
+samhi@Acer-NItro-5:~/project$ git commit -m "names.txt file is deleted
+"
+[master d78c4f9] names.txt file is deleted
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+samhi@Acer-NItro-5:~/project$ git log
+commit d78c4f9330a52f551e0e53a26a001bce0548446c (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+:...skipping...
+commit d78c4f9330a52f551e0e53a26a001bce0548446c (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit d78c4f9330a52f551e0e53a26a001bce0548446c (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit d78c4f9330a52f551e0e53a26a001bce0548446c (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+commit d78c4f9330a52f551e0e53a26a001bce0548446c (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+(END)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+(END)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+...skipping...
+commit d78c4f9330a52f551e0e53a26a001bce0548446c (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+...skipping...
+commit d78c4f9330a52f551e0e53a26a001bce0548446c (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+(END)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+
+2
+
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+samhi@Acer-NItro-5:~$ pwd
+/home/samhi
+samhi@Acer-NItro-5:~$ ls
+project
+samhi@Acer-NItro-5:~$ cd project
+samhi@Acer-NItro-5:~/project$ ls
+names.txt
+samhi@Acer-NItro-5:~/project$ cat names.txt
+dhyanaSamhita
+Kesavarapu
+gitIntro
+
+samhi@Acer-NItro-5:~/project$ rm -rf names.txt
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+samhi@Acer-NItro-5:~/project$ git add .
+samhi@Acer-NItro-5:~/project$ git commit -m "names.txt file is removed
+"
+[master 0eb5709] names.txt file is removed
+ 1 file changed, 4 deletions(-)
+ delete mode 100644 names.txt
+samhi@Acer-NItro-5:~/project$ git log
+commit 0eb5709f69431edecfe6d86940d8b675e1a2feba (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:29:32 2024 +0530
+
+    names.txt file is removed
+
+commit d78c4f9330a52f551e0e53a26a001bce0548446c
+commit d78c4f9330a52f551e0e53a26a001bce0548446c
+commit 0eb5709f69431edecfe6d86940d8b675e1a2feba (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:29:32 2024 +0530
+
+    names.txt file is removed
+
+commit d78c4f9330a52f551e0e53a26a001bce0548446c
+commit 0eb5709f69431edecfe6d86940d8b675e1a2feba (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:29:32 2024 +0530
+
+    names.txt file is removed
+
+commit d78c4f9330a52f551e0e53a26a001bce0548446c
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+(END)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+(END)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:20:44 2024 +0530
+
+    names.txt file is deleted
+
+commit c8444045399896927415bee702aa6069ea66e447
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:18:59 2024 +0530
+
+    names.txt file is modified
+
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+
+samhi@Acer-NItro-5:~/project$
+
+
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+samhi@Acer-NItro-5:~$ ls
+project
+samhi@Acer-NItro-5:~$ pwd
+/home/samhi
+samhi@Acer-NItro-5:~$ cd project
+samhi@Acer-NItro-5:~/project$ ls
+samhi@Acer-NItro-5:~/project$ pwd
+/home/samhi/project
+samhi@Acer-NItro-5:~/project$ \n
+n: command not found
+samhi@Acer-NItro-5:~/project$ n\
+>
+n: command not found
+samhi@Acer-NItro-5:~/project$
+samhi@Acer-NItro-5:~/project$ pwd
+/home/samhi/project
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+nothing to commit, working tree clean
+samhi@Acer-NItro-5:~/project$ git reset 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0
+Unstaged changes after reset:
+D       names.txt
+samhi@Acer-NItro-5:~/project$ git log
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0 (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+samhi@Acer-NItro-5:~/project$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+samhi@Acer-NItro-5:~/project$ git add .
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    names.txt
+
+samhi@Acer-NItro-5:~/project$ touch surname.txt
+samhi@Acer-NItro-5:~/project$ git add .
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    names.txt -> surname.txt
+
+samhi@Acer-NItro-5:~/project$ vim surname.txt
+samhi@Acer-NItro-5:~/project$ touch houses.txt
+samhi@Acer-NItro-5:~/project$ git add .
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    names.txt -> houses.txt
+        new file:   surname.txt
+
+samhi@Acer-NItro-5:~/project$ git stash
+Saved working directory and index state WIP on master: 4b61b91 names.txt file is added
+samhi@Acer-NItro-5:~/project$ git status
+On branch master
+nothing to commit, working tree clean
+samhi@Acer-NItro-5:~/project$ q
+Command 'q' not found, but can be installed with:
+sudo snap install q                       # version 1.6.3-1, or
+sudo apt  install python3-q-text-as-data  # version 3.1.6-1
+See 'snap info q' for additional versions.
+samhi@Acer-NItro-5:~/project$ git log
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0 (HEAD -> master)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+samhi@Acer-NItro-5:~/project$ cat names.txt
+samhi@Acer-NItro-5:~/project$ git stash pop
+Removing names.txt
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   houses.txt
+        new file:   surname.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    names.txt
+
+Dropped refs/stash@{0} (8b6cd6f6de6e0eec1bd9e30dbe247dc7bee798c4)
+samhi@Acer-NItro-5:~/project$ git add stash
+fatal: pathspec 'stash' did not match any files
+samhi@Acer-NItro-5:~/project$ git stash
+Saved working directory and index state WIP on master: 4b61b91 names.txt file is added
+samhi@Acer-NItro-5:~/project$ git stash clear
+samhi@Acer-NItro-5:~/project$ git stash pop
+No stash entries found.
+
+
+
+
+
+
+
+
+3
+
+
+
+samhi@Acer-NItro-5:~$ pwd
+/home/samhi
+samhi@Acer-NItro-5:~$ cd project
+samhi@Acer-NItro-5:~/project$ git remote add origin https://github.com/Samhita1423/gitIntro
+samhi@Acer-NItro-5:~/project$ git remote -v
+origin  https://github.com/Samhita1423/gitIntro (fetch)
+origin  https://github.com/Samhita1423/gitIntro (push)
+samhi@Acer-NItro-5:~/project$ git branch master
+fatal: A branch named 'master' already exists.
+samhi@Acer-NItro-5:~/project$ git push origin master
+Username for 'https://github.com': Samhita
+Password for 'https://Samhita@github.com':
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/Samhita1423/gitIntro/'
+
+
+
+4
+
+
+
+
+samhi@Acer-NItro-5:~/project$ git push origin master
+Username for 'https://github.com': Samhita1423
+Password for 'https://Samhita1423@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 219 bytes | 219.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Samhita1423/gitIntro
+
+*  [newBranch]  master    ->     master
+
+samhi@Acer-NItro-5:~/project$ git branch secondary
+samhi@Acer-NItro-5:~/project$ git checkout secondary
+Switched to branch 'secondary'
+samhi@Acer-NItro-5:~/project$ git branch secondary
+fatal: A branch named 'secondary' already exists.
+samhi@Acer-NItro-5:~/project$ git checkout master
+Switched to branch 'master'
+samhi@Acer-NItro-5:~/project$ vim commands.txt
+samhi@Acer-NItro-5:~/project$ git merge secondary
+Already up to date.
+samhi@Acer-NItro-5:~/project$ git log
+commit 4b61b91ff221acf9fb6c8bc93b89bc215e9a05e0 (HEAD -> master, origin/master, secondary)
+Author: Samhita <samhita1423@gmail.com>
+Date:   Mon Mar 11 18:00:16 2024 +0530
+
+    names.txt file is added
+
+
+
+samhi@Acer-NItro-5:~/project$ git config --global credential.helper cache
+samhi@Acer-NItro-5:~/project$ git push origin master
+Username for 'https://github.com': Samhita1423
+Password for 'https://Samhita1423@github.com':
+Everything up-to-date
+samhi@Acer-NItro-5:~/project$ git push origin master
+Everything up-to-date
